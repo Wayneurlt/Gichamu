@@ -10,7 +10,7 @@
       <div class="mb-8">
         <div class="relative inline-block">
           <img 
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=200&h=200&fit=crop&crop=center&auto=format&q=80" 
+            src="~/assets/images/logo.jpeg" 
             alt="Hiddenville Construction Logo" 
             class="h-32 w-32 mx-auto rounded-full object-cover animate-glow border-4 border-gold-500"
           />

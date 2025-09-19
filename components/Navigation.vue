@@ -6,7 +6,7 @@
         <div class="flex-shrink-0">
           <NuxtLink to="/" class="flex items-center space-x-2">
             <img 
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=40&h=40&fit=crop&crop=center&auto=format&q=80" 
+              src="~/assets/images/logo.jpeg" 
               alt="Hiddenville Construction" 
               class="h-10 w-10 rounded-full object-cover border-2 border-gold-500 animate-glow" 
             />
