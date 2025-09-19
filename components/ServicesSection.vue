@@ -36,21 +36,9 @@
               <h3 class="text-2xl font-bold text-white mb-4 font-poppins">
                 {{ service.title }}
               </h3>
-              <p class="text-gray-300 leading-relaxed mb-6">
+              <p class="text-gray-300 leading-relaxed">
                 {{ service.shortDescription }}
               </p>
-
-              <!-- Features -->
-              <ul class="space-y-2">
-                <li 
-                  v-for="feature in service.features.slice(0, 3)" 
-                  :key="feature"
-                  class="flex items-center text-gray-300 text-sm"
-                >
-                  <Icon name="heroicons:check-circle" class="w-4 h-4 text-gold-400 mr-2 flex-shrink-0" />
-                  {{ feature }}
-                </li>
-              </ul>
 
               <!-- Hover Indicator -->
               <div class="absolute bottom-6 right-6 text-gold-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

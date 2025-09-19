@@ -1,95 +1,115 @@
 <template>
-  <section class="py-20 bg-navy-gradient">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-24 bg-gradient-to-br from-slate-900 via-navy-gradient to-slate-800 relative overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0">
+      <div class="absolute top-20 right-10 w-64 h-64 bg-gold-500/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 left-10 w-48 h-48 bg-blue-500/5 rounded-full blur-2xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Header -->
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-white mb-4 font-poppins">
-          Our Values & <span class="text-gold-gradient">Approach</span>
+      <div class="text-center mb-20">
+        <div class="inline-flex items-center px-4 py-2 bg-gold-500/10 border border-gold-500/20 rounded-full text-gold-400 text-sm font-medium backdrop-blur-sm mb-6">
+          <span class="w-2 h-2 bg-gold-400 rounded-full mr-2 animate-pulse"></span>
+          Our Foundation
+        </div>
+        <h2 class="text-5xl sm:text-6xl font-bold text-white mb-6 font-poppins">
+          Values & <span class="text-gold-gradient bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent">Approach</span>
         </h2>
-        <div class="w-24 h-1 bg-gold-gradient mx-auto mb-6"></div>
         <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
           These four pillars guide everything we do, ensuring we deliver exceptional results while maintaining the highest standards of professionalism.
         </p>
       </div>
 
-      <!-- Values Timeline -->
-      <div class="relative">
-        <!-- Timeline Line -->
-        <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gold-gradient/30 hidden lg:block"></div>
+      <!-- Values Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+        <div 
+          v-for="(value, index) in values" 
+          :key="index"
+          class="group"
+        >
+          <div class="relative bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-500 h-full">
+            <!-- Background Glow -->
+            <div class="absolute inset-0 bg-gold-gradient/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            
+            <!-- Content -->
+            <div class="relative z-10">
+              <!-- Icon -->
+              <div class="w-20 h-20 bg-gold-gradient rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Icon :name="value.icon" class="w-10 h-10 text-white" />
+              </div>
 
-        <!-- Values Grid -->
-        <div class="space-y-16">
-          <div 
-            v-for="(value, index) in values" 
-            :key="index"
-            class="relative flex items-center"
-            :class="index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'"
-          >
-            <!-- Timeline Dot -->
-            <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gold-gradient rounded-full border-4 border-navy-gradient z-10 hidden lg:block"></div>
+              <!-- Title -->
+              <h3 class="text-2xl font-bold text-white mb-4 font-poppins group-hover:text-gold-400 transition-colors duration-300">
+                {{ value.title }}
+              </h3>
 
-            <!-- Content Card -->
-            <div class="w-full lg:w-5/12">
-              <div 
-                class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-gold-500/20 hover:bg-white/15 transition-all duration-300 card-hover group"
-                :class="index % 2 === 0 ? 'lg:mr-auto lg:pr-16' : 'lg:ml-auto lg:pl-16'"
-              >
-                <!-- Icon -->
-                <div class="w-16 h-16 bg-gold-gradient rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Icon :name="value.icon" class="w-8 h-8 text-white" />
+              <!-- Description -->
+              <p class="text-gray-300 leading-relaxed mb-6 text-lg">
+                {{ value.description }}
+              </p>
+
+              <!-- Key Points -->
+              <div class="space-y-3">
+                <div 
+                  v-for="point in value.keyPoints" 
+                  :key="point"
+                  class="flex items-start group/item"
+                >
+                  <div class="w-6 h-6 bg-gold-500/20 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 group-hover/item:bg-gold-500 transition-colors duration-300">
+                    <Icon name="heroicons:check" class="w-4 h-4 text-gold-400 group-hover/item:text-white transition-colors duration-300" />
+                  </div>
+                  <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300">{{ point }}</span>
                 </div>
-
-                <!-- Content -->
-                <h3 class="text-2xl font-bold text-white mb-4 font-poppins">
-                  {{ value.title }}
-                </h3>
-                <p class="text-gray-300 leading-relaxed mb-6">
-                  {{ value.description }}
-                </p>
-
-                <!-- Key Points -->
-                <ul class="space-y-2">
-                  <li 
-                    v-for="point in value.keyPoints" 
-                    :key="point"
-                    class="flex items-center text-gray-300"
-                  >
-                    <Icon name="heroicons:check-circle" class="w-5 h-5 text-gold-400 mr-3 flex-shrink-0" />
-                    {{ point }}
-                  </li>
-                </ul>
               </div>
             </div>
 
-            <!-- Spacer for opposite side -->
-            <div class="hidden lg:block w-5/12"></div>
+            <!-- Decorative Element -->
+            <div class="absolute top-4 right-4 w-12 h-12 border border-gold-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
         </div>
       </div>
 
-      <!-- Process Steps -->
-      <div class="mt-20">
-        <h3 class="text-3xl font-bold text-white text-center mb-12 font-poppins">
-          Our Process
-        </h3>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Process Section -->
+      <div class="bg-white/5 backdrop-blur-md rounded-3xl p-12 border border-white/10">
+        <div class="text-center mb-12">
+          <h3 class="text-4xl font-bold text-white mb-4 font-poppins">
+            Our <span class="text-gold-gradient">Process</span>
+          </h3>
+          <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+            A systematic approach that ensures every project is delivered with precision and excellence.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div 
             v-for="(step, index) in processSteps" 
             :key="index"
-            class="text-center group"
+            class="group text-center relative"
           >
-            <!-- Step Number -->
-            <div class="w-16 h-16 bg-gold-gradient rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300">
-              {{ index + 1 }}
+            <!-- Connecting Line -->
+            <div 
+              v-if="index < processSteps.length - 1"
+              class="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-gold-500/50 to-transparent transform -translate-y-1/2 z-0"
+            ></div>
+
+            <!-- Step Container -->
+            <div class="relative z-10">
+              <!-- Step Number -->
+              <div class="relative w-16 h-16 bg-gold-gradient rounded-2xl flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                {{ index + 1 }}
+                <!-- Glow Effect -->
+                <div class="absolute inset-0 bg-gold-gradient rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+              </div>
+              
+              <!-- Step Content -->
+              <h4 class="text-xl font-semibold text-white mb-4 font-poppins group-hover:text-gold-400 transition-colors duration-300">
+                {{ step.title }}
+              </h4>
+              <p class="text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300">
+                {{ step.description }}
+              </p>
             </div>
-            
-            <!-- Step Content -->
-            <h4 class="text-xl font-semibold text-white mb-4 font-poppins">
-              {{ step.title }}
-            </h4>
-            <p class="text-gray-300 leading-relaxed">
-              {{ step.description }}
-            </p>
           </div>
         </div>
       </div>
