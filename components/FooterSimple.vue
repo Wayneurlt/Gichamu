@@ -4,11 +4,10 @@
       <div class="text-center">
         <div class="flex items-center justify-center space-x-2 mb-6">
           <img 
-            src="~/assets/images/logo.jpeg" 
+            src="~/assets/images/logo.png" 
             alt="Hiddenville Construction" 
-            class="h-10 w-10 rounded-full object-cover border-2 border-gold-500"
+            class="h-20 w-auto object-contain"
           />
-          <span class="text-white font-bold text-xl font-poppins">Hiddenville Construction</span>
         </div>
         <p class="text-gray-300 mb-4">
           Turning your vision into reality with professional construction services.

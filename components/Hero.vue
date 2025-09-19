@@ -1,5 +1,5 @@
 <template>
-  <section class="relative min-h-screen bg-gradient-to-br from-slate-900 via-navy-gradient to-slate-800 flex items-center justify-center overflow-hidden">
+  <section class="relative min-h-screen bg-gradient-to-br from-slate-900 via-navy-gradient to-slate-800 flex items-center justify-center overflow-hidden pt-24">
     <!-- Animated Background Elements -->
     <div class="absolute inset-0">
       <!-- Geometric Shapes -->
@@ -20,7 +20,7 @@
         <!-- Left Content -->
         <div class="text-left space-y-8">
           <!-- Badge -->
-          <div class="inline-flex items-center px-4 py-2 bg-gold-500/10 border border-gold-500/20 rounded-full text-gold-400 text-sm font-medium backdrop-blur-sm">
+          <div class="inline-flex items-center px-4 py-2 mt-10 bg-gold-500/10 border border-gold-500/20 rounded-full text-gold-400 text-sm font-medium backdrop-blur-sm">
             <span class="w-2 h-2 bg-gold-400 rounded-full mr-2 animate-pulse"></span>
             Trusted Construction Partner Since 2008
           </div>

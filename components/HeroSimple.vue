@@ -1,5 +1,5 @@
 <template>
-  <section class="relative min-h-screen bg-navy-gradient flex items-center justify-center overflow-hidden pt-16">
+  <section class="relative min-h-screen bg-navy-gradient flex items-center justify-center overflow-hidden pt-24">
     <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-10">
       <div class="absolute inset-0 bg-pattern"></div>
@@ -10,9 +10,9 @@
       <div class="mb-8">
         <div class="relative inline-block">
           <img 
-            src="~/assets/images/logo.jpeg" 
+            src="~/assets/images/logo.png" 
             alt="Hiddenville Construction Logo" 
-            class="h-32 w-32 mx-auto rounded-full object-cover animate-glow border-4 border-gold-500"
+            class="h-20 w-auto mx-auto object-contain"
           />
         </div>
       </div>

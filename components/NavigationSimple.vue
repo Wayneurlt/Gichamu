@@ -1,16 +1,15 @@
 <template>
   <nav class="fixed top-0 left-0 right-0 z-50 bg-navy-gradient/95 backdrop-blur-md border-b border-gold-500/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
+      <div class="flex justify-between items-center h-24">
         <!-- Logo -->
         <div class="flex-shrink-0">
           <NuxtLink to="/" class="flex items-center space-x-2">
             <img 
-              src="~/assets/images/logo.jpeg" 
+              src="~/assets/images/logo.png" 
               alt="Hiddenville Construction" 
-              class="h-10 w-10 rounded-full object-cover border-2 border-gold-500"
+              class="h-20 w-auto object-contain"
             />
-            <span class="text-white font-bold text-xl font-poppins">Hiddenville Construction</span>
           </NuxtLink>
         </div>
 
